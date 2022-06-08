@@ -1,6 +1,7 @@
-import './App.css';
+import './App.css'
 import React from 'react'
 
+//Main page header
 const Head = () => {
   return (
     <>
@@ -10,201 +11,90 @@ const Head = () => {
   )
 }
 
-const Main = (props) => {
-  const questions = ["Cat 1", "Cat 2", "Cat 3", "Cat 4", "Cat 5", "Cat 6"]
-  const q1 = ["11", "12", "13", "14", "15", "16"]
-  const q2 = ["21", "22", "23", "24", "2 5", "26"]
-  const q3 = ["31", "32", "33", "34", "35", "36"]
-  const q4 = ["41", "42", "43", "44", "45", "46"]
-  const q5 = ["51", "52", "53", "54", "55", "56"]
-  const p1 = 100
-  const p2 = 200
-  const p3 = 300
-  const p4 = 400
-  const p5 = 500
-
-  const questionsList = questions.map((question) =>
-  <li key={question}>
-    {question}
-    </li>
-  )
-  return (
-    <div>
-      <div className="sideTeams">
-        <div>Team 1</div>
-        <div>Team 2</div>
-        <div>Team 3</div>
-      </div>
-      <div className="gameBody">
-        <Board />
-      </div>
-    </div>
-  )
-}
 
 
-const Board = () => {
-  const finStyle = {
-    display: "inline-block",
-    backgroundColor: 'lightblue',
-    padding: "5%",
-    verticalAlign: "middle",
-    margin: "1%",
-    borderRadius: "15%",
-    
-  }
-  const finStyle2 = {
-    display: "inline-block",
-    width: "4%",
-    height: "1%",
-    backgroundColor: 'lightblue',
-    paddingLeft: "3%",
-    paddingRight: "3%",
-    paddingTop: "1%",
-    paddingBottom: "1%",
-    verticalAlign: "middle",
-    marginLeft: "1%",
-    marginRight: "0.8%",
-    border: "2px solid black",
-    borderRadius: "7%",
-  }
-  const printWorking = (msg) => {
-    console.log(msg)
-    setTrial(!trial)
-    return
-  }
-  const [trial, setTrial] = React.useState(true)
 
-  return (
-    <>
-      <div className="App">
-      <div className='parent'>
-          <div style={finStyle2} onClick={() => printWorking("Hello")}>{trial && <>Title 1</>}</div>
-          <div style={finStyle2}>Title 2</div>
-          <div style={finStyle2}>Title 3</div>
-          <div style={finStyle2}>Title 4</div>
-          <div style={finStyle2}>Title 5</div>
-          <div style={finStyle2}>Title 6</div>
-        </div>
-      <div className='parent'>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-        </div>
-        <div className='parent'>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-        </div>
-        <div className='parent'>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-        </div>
-        <div className='parent'>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-        </div>
-        <div className='parent'>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-          <div style={finStyle}></div>
-        </div>
-      </div>
-    </>
-  )
-}
-
-
-/*
-<h1>{props.players}</h1>
-      <h2>Main</h2>
-<>{questionsList}</>
-*/
-/*
-const Foot = () => {
-  return (
-    <h2>
-      Foot
-    </h2>
-    )
-}
-*/
-
-function App() {
-  //states
-  const [showMain, setshowMain] = React.useState(false)
+function App () {
+  //States
   let [players, setPlays] = React.useState(1)
-  const [name, setName] = React.useState()
+  const [showMain, setshowMain] = React.useState(false)
 
-  //constants
-  //const teams = ["Team 1", "Team 2", "Team 3", "Team 4", "Team 5", "Team 6", "Team 7", "Team 8"]
-
+  const [name1, setName1] = React.useState()
+  const [name2, setName2] = React.useState()
+  const [name3, setName3] = React.useState()
+  const [name4, setName4] = React.useState()
+  const [name5, setName5] = React.useState()
+  const [name6, setName6] = React.useState()
+  const [name7, setName7] = React.useState()
+  const [name8, setName8] = React.useState()
+  const nameArr = [name1, name2, name3, name4, name5, name6, name7, name8]
+  const setNameArr = [setName1, setName2, setName3, setName4,setName5,setName6,setName7,setName8]
   //onClicks
-  const showMainClick = () => {
-    setshowMain(true)
-  }
+  const showMainClick = () => {setshowMain(true)};
   function increaseTeams () {
     if (players < 8) {
       setPlays(players + 1)
     }
-    else {setPlays(8)}
-  }
+    else {
+      setPlays(8)
+    }
+  };
   function decreaseTeams () {
     if ( players === 1 ) {
       players = 1
     }
-    else {setPlays(players - 1)}
+    else {
+      setPlays(players - 1)
+    }
+  };
+  function changeName (N, Na){
+    setNameArr[N](Na)
   }
   const handleSubmit= (e) => {
     e.preventDefault();
   }
 
-  return (
+
+  //Team Names function
+  const teamNames = (n) => {
+    let ar =[]
+    for (let i =0; i <n; i++) {
+      ar[i] = [i+1]
+    }
+    const teamMap = ar.map((num) => 
+    <div key={num.toString()}>
+      <form onSubmit={e => { handleSubmit(e) }}>
+        <input name="nameChange1" placeholder={"Team " + num.toString()}type="text" onChange={e => changeName(num, e.target.value)}/>
+      </form>
+    </div>)
+    return teamMap
+  };
+
+
+  return(
     <div className="App">
+      {/*Header*/}
       {!showMain && <Head />}
 
+      {/*Team Buttons*/}
       {!showMain && <div className="App">
         <button className="playbutton" onClick={decreaseTeams}>-</button>
         <div className="App players"> {players} 
         </div>
         <button className="playbutton" onClick={increaseTeams}>+</button>
       </div>}
-
+      {/*Start Button*/}
+      {!showMain && teamNames(players)}
+      <></>
       {!showMain && <button className="StartButton" onClick={showMainClick}>Start the game!</button>}
-
-      {showMain && <div><Main players={players}/></div>}
-      <br></br>
-      <>
-        <form onSubmit={e => { handleSubmit(e) }}>
-          <input name="nameChange1" type="text" onChange={e => setName(e.target.value)}/>
-          <input 
-          type='submit' 
-          value='Add Name' 
-        />
-        </form>
-      </>
-      {name}
-      {/*{showMain && <Foot />}*/}
+      {showMain && <div><h1>Showing Main</h1></div>}
     </div>
-  );
+  )
 }
+
+
+
+
 
 
 export default App;
