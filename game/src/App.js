@@ -34,8 +34,14 @@ const Foot = () => {
 
 
 function App() {
+  //states
   const [showMain, setshowMain] = React.useState(false)
   let [players, setPlays] = React.useState(0)
+
+  //constants
+  const teams = ["Team 1", "Team 2", "Team 3", "Team 4", "Team 5", "Team 6", "Team 7", "Team 8"]
+
+  //onClicks
   const showMainClick = () => {
     setshowMain(true)
   }
@@ -51,17 +57,23 @@ function App() {
     }
     else {setPlays(players - 1)}
   }
+
+
   return (
     <div className="App">
       {!showMain && <Head />}
+
       {!showMain && <div className="App">
         <button className="playbutton" onClick={decreaseTeams}>-</button>
         <div className="App players"> {players} 
         </div>
         <button className="playbutton" onClick={increaseTeams}>+</button>
       </div>}
+
       {!showMain && <button className="StartButton" onClick={showMainClick}>Start the game!</button>}
+
       {showMain && <div><Main players={players}/></div>}
+
       {showMain && <Foot />}
     </div>
   );
