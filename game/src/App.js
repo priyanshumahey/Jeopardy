@@ -7,11 +7,9 @@ import React from 'react'
 
 const Head = () => {
   return (
-    <h1>JeoPriydy</h1>
+    <h1 className="Title">JeoPriydy</h1>
   )
 }
-
-
 
 const Main = () => {
   return (
@@ -31,11 +29,16 @@ const Foot = () => {
 
 
 function App() {
+  const [showMain, setshowMain] = React.useState(false)
+  const showMainClick = () => {
+    setshowMain(true)
+  }
   return (
     <div className="App">
-      <Head />
-      <Main />
-      <Foot />
+      {!showMain && <Head />}
+      {!showMain && <button className="StartButton" onClick={showMainClick}>Start the game!</button>}
+      {showMain && <Main />}
+      {showMain && <Foot />}
     </div>
   );
 }
