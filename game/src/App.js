@@ -140,7 +140,7 @@ const Board = () => {
       <h2>Main</h2>
 <>{questionsList}</>
 */
-
+/*
 const Foot = () => {
   return (
     <h2>
@@ -148,7 +148,7 @@ const Foot = () => {
     </h2>
     )
 }
-
+*/
 
 function App() {
   //states
