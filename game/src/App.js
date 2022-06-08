@@ -73,13 +73,16 @@ const Board = () => {
   }
   const printWorking = (msg) => {
     console.log(msg)
+    setTrial(!trial)
     return
   }
+  const [trial, setTrial] = React.useState(true)
+
   return (
     <>
       <div className="App">
       <div className='parent'>
-          <div style={finStyle2} onClick={() => printWorking("Hello")}>Title 1</div>
+          <div style={finStyle2} onClick={() => printWorking("Hello")}>{trial && <>Title 1</>}</div>
           <div style={finStyle2}>Title 2</div>
           <div style={finStyle2}>Title 3</div>
           <div style={finStyle2}>Title 4</div>
