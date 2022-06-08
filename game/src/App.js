@@ -1,9 +1,6 @@
 import './App.css';
 import React from 'react'
 
-// For later:
-// https://react-bootstrap.github.io/components/overlays/
-
 const Head = () => {
   return (
     <>
@@ -154,6 +151,7 @@ function App() {
   //states
   const [showMain, setshowMain] = React.useState(false)
   let [players, setPlays] = React.useState(1)
+  const [name, setName] = React.useState()
 
   //constants
   //const teams = ["Team 1", "Team 2", "Team 3", "Team 4", "Team 5", "Team 6", "Team 7", "Team 8"]
@@ -174,7 +172,9 @@ function App() {
     }
     else {setPlays(players - 1)}
   }
-
+  const handleSubmit= (e) => {
+    e.preventDefault();
+  }
 
   return (
     <div className="App">
@@ -190,7 +190,17 @@ function App() {
       {!showMain && <button className="StartButton" onClick={showMainClick}>Start the game!</button>}
 
       {showMain && <div><Main players={players}/></div>}
-
+      <br></br>
+      <>
+        <form onSubmit={e => { handleSubmit(e) }}>
+          <input name="nameChange1" type="text" onChange={e => setName(e.target.value)}/>
+          <input 
+          type='submit' 
+          value='Add Name' 
+        />
+        </form>
+      </>
+      {name}
       {/*{showMain && <Foot />}*/}
     </div>
   );
