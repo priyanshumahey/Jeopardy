@@ -11,8 +11,6 @@ const Head = () => {
   )
 }
 
-
-
 function App () {
   //States
   let [players, setPlays] = React.useState(1)

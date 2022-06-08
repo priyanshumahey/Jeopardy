@@ -10,7 +10,7 @@ const Head = () => {
   )
 }
 
-const Main = (props) => {
+const Main = () => {
   const questions = ["Cat 1", "Cat 2", "Cat 3", "Cat 4", "Cat 5", "Cat 6"]
   const q1 = ["11", "12", "13", "14", "15", "16"]
   const q2 = ["21", "22", "23", "24", "2 5", "26"]
