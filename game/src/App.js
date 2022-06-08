@@ -27,10 +27,15 @@ function App () {
   const [name6, setName6] = React.useState()
   const [name7, setName7] = React.useState()
   const [name8, setName8] = React.useState()
+  const [names, setNames] = React.useState()
   const nameArr = [name1, name2, name3, name4, name5, name6, name7, name8]
   const setNameArr = [setName1, setName2, setName3, setName4,setName5,setName6,setName7,setName8]
+  const setPoints = [0,0,0,0,0,0,0,0]
   //onClicks
-  const showMainClick = () => {setshowMain(true)};
+  const showMainClick = () => {setshowMain(true)
+    setNames(formatName(nameArr, players))
+  };
+
   function increaseTeams () {
     if (players < 8) {
       setPlays(players + 1)
@@ -39,8 +44,9 @@ function App () {
       setPlays(8)
     }
   };
+
   function decreaseTeams () {
-    if ( players === 1 ) {
+    if ( players === 1) {
       players = 1
     }
     else {
@@ -48,7 +54,7 @@ function App () {
     }
   };
   function changeName (N, Na){
-    setNameArr[N](Na)
+    setNameArr[N-1](Na)
   }
   const handleSubmit= (e) => {
     e.preventDefault();
@@ -69,7 +75,41 @@ function App () {
     </div>)
     return teamMap
   };
+  
+  const formatName = (arr, num) =>{
+    let trueable = []
+    for (let x=0; x <8; x++) {
+      trueable.push(false)
+    }
+    for (let n=0; n<num; n++) {
+      trueable[n] = true
+    }
+    console.log(trueable)
+    let new_arr = []
 
+    for (let j=0; j < arr.length; j++) {
+      /*
+      if (arr[i] === undefined) {
+        if (trueable[i]){
+          arr[i] = "Team "+ (i + 1).toString()
+        }
+        if (!trueable[i]){
+          arr.splice(i)
+        }
+        i--
+      }
+      */
+      if (trueable[j]) {
+        if (arr[j] !== undefined) {
+          new_arr.push(arr[j])
+        }
+        else {new_arr.push("Team "+ (j + 1).toString()) }
+      }
+      
+    };
+    console.log(new_arr)
+    return new_arr
+  }
 
   return(
     <div className="App">
@@ -88,6 +128,7 @@ function App () {
       <></>
       {!showMain && <button className="StartButton" onClick={showMainClick}>Start the game!</button>}
       {showMain && <div><h1>Showing Main</h1></div>}
+      {showMain && names.map(name => <div key={name}>{name}</div>)}
     </div>
   )
 }
