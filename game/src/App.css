@@ -67,6 +67,15 @@
   padding:0.5% 0.5%;
 }
 
+.playbutton:hover {
+	background-color:#5cbf2a;
+}
+
+.playbutton:active {
+	position:relative;
+	top:1px;
+}
+
 .sideTeams{
   height: 100%;
   width: 20%;

@@ -115,8 +115,8 @@ function App () {
 
       {/*Team Buttons*/}
       {!showMain && <div className="App">
-        <button className="playbutton" onClick={decreaseTeams}>-</button>
-        <div className="App players"> {players} 
+        <button className="playbutton" onClick={decreaseTeams}>&nbsp;-&nbsp;</button>
+        <div className="App players">{players} 
         </div>
         <button className="playbutton" onClick={increaseTeams}>+</button>
       </div>}
