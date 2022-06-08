@@ -13,12 +13,11 @@ const Head = () => {
 
 
 
-
 function App () {
   //States
   let [players, setPlays] = React.useState(1)
   const [showMain, setshowMain] = React.useState(false)
-
+  //definitely need to change name in array or object. This was of managing the states is trash
   const [name1, setName1] = React.useState()
   const [name2, setName2] = React.useState()
   const [name3, setName3] = React.useState()
@@ -30,7 +29,7 @@ function App () {
   const [names, setNames] = React.useState()
   const nameArr = [name1, name2, name3, name4, name5, name6, name7, name8]
   const setNameArr = [setName1, setName2, setName3, setName4,setName5,setName6,setName7,setName8]
-  const setPoints = [0,0,0,0,0,0,0,0]
+  //const setPoints = [0,0,0,0,0,0,0,0]
   //onClicks
   const showMainClick = () => {setshowMain(true)
     setNames(formatName(nameArr, players))
