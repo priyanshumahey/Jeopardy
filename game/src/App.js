@@ -36,14 +36,12 @@ const Foot = () => {
 function App() {
   const [showMain, setshowMain] = React.useState(false)
   let [players, setPlays] = React.useState(0)
-  let [names, setNames] = React.useState([])
   const showMainClick = () => {
     setshowMain(true)
   }
   function increaseTeams () {
     if (players < 8) {
       setPlays(players + 1)
-      setNames(names.arrayvar.concat(["play"]))
     }
     else {setPlays(8)}
   }
@@ -65,7 +63,6 @@ function App() {
       {!showMain && <button className="StartButton" onClick={showMainClick}>Start the game!</button>}
       {showMain && <div><Main players={players}/></div>}
       {showMain && <Foot />}
-      <p>{names} hello</p>
     </div>
   );
 }
