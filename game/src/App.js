@@ -14,11 +14,14 @@ const Head = () => {
   )
 }
 
-const Main = () => {
+const Main = (props) => {
   return (
+    <div>
+    <h1>{props.players}</h1>
     <h2>
       Main
     </h2>
+    </div>
   )
 }
 
@@ -59,7 +62,7 @@ function App() {
         <button className="playbutton" onClick={increaseTeams}>+</button>
       </div>}
       {!showMain && <button className="StartButton" onClick={showMainClick}>Start the game!</button>}
-      {showMain && <div><Main /></div>}
+      {showMain && <div><Main players={players}/></div>}
       {showMain && <Foot />}
     </div>
   );
