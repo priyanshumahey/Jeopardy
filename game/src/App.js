@@ -1,3 +1,4 @@
+
 import './App.css'
 import React from 'react'
 
@@ -106,7 +107,9 @@ function App () {
     };
     console.log(new_arr)
     return new_arr
+
   }
+  const [showDisplay, setshowDisplay] = React.useState(false)
 
   return(
     <div className="App">
@@ -126,9 +129,15 @@ function App () {
       {!showMain && <button className="StartButton" onClick={showMainClick}>Start the game!</button>}
       {showMain && <div><h1>Showing Main</h1></div>}
       {showMain && names.map(name => <div key={name}>{name}</div>)}
+      <br></br>
+      <button onClick={() => setshowDisplay(true)}>Overlay</button>
+      {showDisplay && <div className="overlay" onClick={() => setshowDisplay(false)}>
+        <div className="text">Question</div>
+      </div>}
     </div>
   )
 }
+
 
 
 
