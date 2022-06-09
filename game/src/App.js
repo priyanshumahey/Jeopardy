@@ -134,11 +134,18 @@ function App () {
       {showDisplay && <div className="overlay" onClick={() => setshowDisplay(false)}>
         <div className="text">Question</div>
       </div>}
+      {showDisplay && <Showdisplay onClick={() => setshowDisplay(false)} text="This text prop"/>}
     </div>
   )
 }
 
-
+const Showdisplay = (props) => {
+  return(
+    <div className="overlay" onClick= {props.onClick}>
+        <div className="text">props.text</div>
+      </div>
+  )
+}
 
 
 
