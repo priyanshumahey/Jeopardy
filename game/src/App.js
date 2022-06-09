@@ -1,4 +1,3 @@
-
 import './App.css'
 import React from 'react'
 
@@ -99,6 +98,24 @@ function App () {
 
   }
   const [showDisplay, setshowDisplay] = React.useState(false)
+  
+  const [showTest, setshowTest] = React.useState([true, true, true])
+
+  function changeButton (arr, nu) {
+    //proper indexing 
+    const nu_new = nu - 1
+    const new_arr = []
+    for (let i = 0; i < arr.length; i++) {
+      if (i !== nu_new) 
+      {
+        new_arr.push(arr[i])
+      }
+      else {
+        new_arr.push(!arr[i])
+      }
+    }
+    return new_arr
+  }
 
   return(
     <div className="App">
@@ -124,6 +141,9 @@ function App () {
         <div className="text">Question</div>
       </div>}
       {showDisplay && <Showdisplay onClick={() => setshowDisplay(false)} text="This text prop"/>}
+      {showTest[0] && <><button onClick={() =>setshowTest(changeButton(showTest, 1))}></button></>}
+      {showTest[1] && <><button onClick={() =>setshowTest(changeButton(showTest, 2))}></button></>}
+      {showTest[2] && <><button onClick={() =>setshowTest(changeButton(showTest, 3))}></button></>}
     </div>
   )
 }
