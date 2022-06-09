@@ -86,17 +86,6 @@ function App () {
     let new_arr = []
 
     for (let j=0; j < arr.length; j++) {
-      /*
-      if (arr[i] === undefined) {
-        if (trueable[i]){
-          arr[i] = "Team "+ (i + 1).toString()
-        }
-        if (!trueable[i]){
-          arr.splice(i)
-        }
-        i--
-      }
-      */
       if (trueable[j]) {
         if (arr[j] !== undefined) {
           new_arr.push(arr[j])
