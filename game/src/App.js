@@ -1,12 +1,103 @@
-import './App.css'
 import React from 'react'
+import './App.css'
+
 
 //Main page header
+//Disappears past home
+//JeoPriydy
 const Head = () => {
   return (
     <>
-      <h1 className="Title" >JeoPriydy</h1>
+      <h1 className="Title" >Jeopardy</h1>
       <h3>Welcome to JeoPriydy, the classic quiz game! To begin, choose the number of people and start the game!</h3>
+    </>
+  )
+}
+
+const Board = () => {
+  const finStyle = {
+    display: "inline-block",
+    backgroundColor: 'lightblue',
+    padding: "5%",
+    verticalAlign: "middle",
+    margin: "1%",
+    borderRadius: "15%",
+    
+  }
+  const finStyle2 = {
+    display: "inline-block",
+    width: "4%",
+    height: "1%",
+    backgroundColor: 'lightblue',
+    paddingLeft: "3%",
+    paddingRight: "3%",
+    paddingTop: "1%",
+    paddingBottom: "1%",
+    verticalAlign: "middle",
+    marginLeft: "1%",
+    marginRight: "0.8%",
+    border: "2px solid black",
+    borderRadius: "7%",
+  }
+  const printWorking = (msg) => {
+    console.log(msg)
+    setTrial(!trial)
+    return
+  }
+  const [trial, setTrial] = React.useState(true)
+
+  return (
+    <>
+      <div className="App">
+      <div className='parent'>
+          <div style={finStyle2} onClick={() => printWorking("Hello")}>{trial && <>Title 1</>}</div>
+          <div style={finStyle2}>Title 2</div>
+          <div style={finStyle2}>Title 3</div>
+          <div style={finStyle2}>Title 4</div>
+          <div style={finStyle2}>Title 5</div>
+          <div style={finStyle2}>Title 6</div>
+        </div>
+      <div className='parent'>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+        </div>
+        <div className='parent'>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+        </div>
+        <div className='parent'>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+        </div>
+        <div className='parent'>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+        </div>
+        <div className='parent'>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+          <div style={finStyle}></div>
+        </div>
+      </div>
     </>
   )
 }
@@ -135,30 +226,41 @@ function App () {
       <></>
       {!showMain && <button className="StartButton" onClick={showMainClick}>Start the game!</button>}
       {showMain && <div><h1>Showing Main</h1></div>}
-      {showMain && names.map(name => <div key={name}>{name}</div>)}
+      {/* {showMain && names.map(name => <div key={name}>{name}</div>)} */}
       <br></br>
       <button onClick={() => setshowDisplay(true)}>Overlay</button>
       {showDisplay && <div className="overlay" onClick={() => setshowDisplay(false)}>
         <div className="text">Question</div>
       </div>}
-      {showDisplay && <Showdisplay onClick={() => setshowDisplay(false)} text="This text prop"/>}
-      {showTest[0] && <><button onClick={() =>setshowTest(changeButton(showTest, 1))}></button></>}
-      {showTest[1] && <><button onClick={() =>setshowTest(changeButton(showTest, 2))}></button></>}
-      {showTest[2] && <><button onClick={() =>setshowTest(changeButton(showTest, 3))}></button></>}
-    </div>
-  )
-}
+      {showTest[0] && <><button onClick={() =>setshowTest(changeButton(showTest, 1))}>1</button></>}
+      {showTest[1] && <><button onClick={() =>setshowTest(changeButton(showTest, 2))}>2</button></>}
+      {showTest[2] && <><button onClick={() =>setshowTest(changeButton(showTest, 3))}>3</button></>}
+      {showMain && <div><div className="sideTeams">
+          {names.map(name => <div key={name}>{name}</div>)}
+        </div>
+        <div className="gameBody">
+          <Board />
+        </div>
+      </div>}
 
-const Showdisplay = (props) => {
-  return(
-    <div className="overlay" onClick= {props.onClick}>
-        <div className="text">props.text</div>
       </div>
   )
 }
 
 
-
+/*
+{showMain && 
+      <div>
+        <div className="sideTeams">
+          <div>Team 1</div>
+          <div>Team 2</div>
+          <div>Team 3</div>
+        </div>
+        <div className="gameBody">
+          <Board />
+        </div>
+      </div>}
+*/
 
 
 export default App;
