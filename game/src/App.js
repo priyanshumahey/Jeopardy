@@ -98,9 +98,10 @@ function App () {
 
   }
   const [showDisplay, setshowDisplay] = React.useState(false)
-  
-  const [showTest, setshowTest] = React.useState([true, true, true])
+  const xyz = new Array(1).fill(true);
+  const [showTest, setshowTest] = React.useState(xyz)
 
+  // const [boardView, setboardView] = React.useState([])
   function changeButton (arr, nu) {
     //proper indexing 
     const nu_new = nu - 1
