@@ -98,7 +98,7 @@ function App () {
 
   }
   const [showDisplay, setshowDisplay] = React.useState(false)
-  const xyz = new Array(1).fill(true);
+  const xyz = new Array(30).fill(true);
   const [showTest, setshowTest] = React.useState(xyz)
 
   // const [boardView, setboardView] = React.useState([])
