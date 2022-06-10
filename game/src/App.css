@@ -135,3 +135,18 @@ input {border-style: none;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
 }
+
+.Points {
+  display:inline-block;
+  margin: 10px;
+  font-size: 20px;
+  background-color: rgb(255, 255, 255); 
+}
+.butt{
+  display:inline-block;
+  margin: 10px;
+  background-color: rgba(0,0,0,0.5); 
+  font-size: 20px;
+  height:40px;
+  width:40px;
+}

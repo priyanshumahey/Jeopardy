@@ -129,10 +129,10 @@ function App() {
                     {names.map(name => 
                     <div key={name}>
                         {name}
-                        <div className="Points">
-                            <button className="pointmin" onClick={()=>decreasePoint(names.indexOf(name))}>-</button>
-                            <p  key={Points[names.indexOf(name)]}> {Points[names.indexOf(name)]}</p>
-                            {<button className="pointadd" onClick={()=> increasePoint(names.indexOf(name))}>+</button>}
+                        <div >
+                            <button className="Points butt" onClick={()=>decreasePoint(names.indexOf(name))}>-</button>
+                            <p  className="Points" key={Points[names.indexOf(name)]}> {Points[names.indexOf(name)]}</p>
+                            {<button className="Points butt" onClick={()=> increasePoint(names.indexOf(name))}>+</button>}
                         </div>
                     </div>
                     )}
