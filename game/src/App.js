@@ -92,6 +92,7 @@ function App() {
         <div className="App">
             {/*Header*/}
             {!showMain && <Head />}
+
             {/*Team Buttons*/}
             {!showMain && <div className="App">
                 <button className="playbutton" onClick={decreaseTeams}>&nbsp;-&nbsp;</button>
@@ -105,6 +106,18 @@ function App() {
             <></>
             {!showMain && <button className="StartButton" onClick={showMainClick}>Start the game!</button>}
             {showMain && <div><h1>Showing Main</h1></div>}
+            {showMain && <div>
+                <div className="sideTeams">
+                    {names.map(name => 
+                    <div key={name}>
+                        {name}
+                    </div>
+                    )}
+                </div>
+                <div className="gameBody">
+                    {/*<Board />*/}
+                </div>
+            </div>}
 
 
         </div>
