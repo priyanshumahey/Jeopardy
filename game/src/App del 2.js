@@ -141,9 +141,11 @@ function App () {
       setPlays(players - 1)
     }
   };
+
   function changeName (N, Na){
     setNameArr[N-1](Na)
   }
+
   const handleSubmit= (e) => {
     e.preventDefault();
   }
@@ -172,7 +174,6 @@ function App () {
     for (let n=0; n<num; n++) {
       trueable[n] = true
     }
-    console.log(trueable)
     let new_arr = []
 
     for (let j=0; j < arr.length; j++) {
@@ -184,11 +185,12 @@ function App () {
       }
       
     };
-    console.log(new_arr)
     return new_arr
 
   }
+  
   const [showDisplay, setshowDisplay] = React.useState(false)
+  //Change to boards
   const xyz = new Array(30).fill(true);
   const [showTest, setshowTest] = React.useState(xyz)
 
@@ -221,11 +223,13 @@ function App () {
         </div>
         <button className="playbutton" onClick={increaseTeams}>+</button>
       </div>}
+
       {/*Start Button*/}
       {!showMain && teamNames(players)}
       <></>
       {!showMain && <button className="StartButton" onClick={showMainClick}>Start the game!</button>}
       {showMain && <div><h1>Showing Main</h1></div>}
+
       {/* {showMain && names.map(name => <div key={name}>{name}</div>)} */}
       <br></br>
       <button onClick={() => setshowDisplay(true)}>Overlay</button>
@@ -235,15 +239,14 @@ function App () {
       {showTest[0] && <><button onClick={() =>setshowTest(changeButton(showTest, 1))}>1</button></>}
       {showTest[1] && <><button onClick={() =>setshowTest(changeButton(showTest, 2))}>2</button></>}
       {showTest[2] && <><button onClick={() =>setshowTest(changeButton(showTest, 3))}>3</button></>}
-      {showMain && <div><div className="sideTeams">
+      {showMain && <div>
+        <div className="sideTeams">
           {names.map(name => <div key={name}>{name}</div>)}
         </div>
-        <div className="gameBody">
-          <Board />
+        <div className="gameBody"><Board />
         </div>
       </div>}
-
-      </div>
+    </div>
   )
 }
 
