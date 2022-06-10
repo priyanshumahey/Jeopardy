@@ -39,7 +39,7 @@ function App() {
         //Changes Main
     const showMainClick = () => {setshowMain(true)
         setNames(formatName(nameArr, players))
-        setPoints([1000,0,0,0,0,0,0,0])
+        setPoints([0,0,0,0,0,0,0,0])
     };
         //Changes formating of the name
     const formatName = (arr, num) =>{
@@ -129,9 +129,11 @@ function App() {
                     {names.map(name => 
                     <div key={name}>
                         {name}
-                        <button className="pointmin" onClick={()=>decreasePoint(names.indexOf(name))}>-</button>
-                        <p  key={Points[names.indexOf(name)]}> {Points[names.indexOf(name)]}</p>
-                        {<button className="pointadd" onClick={()=> increasePoint(names.indexOf(name))}>+</button>}
+                        <div className="Points">
+                            <button className="pointmin" onClick={()=>decreasePoint(names.indexOf(name))}>-</button>
+                            <p  key={Points[names.indexOf(name)]}> {Points[names.indexOf(name)]}</p>
+                            {<button className="pointadd" onClick={()=> increasePoint(names.indexOf(name))}>+</button>}
+                        </div>
                     </div>
                     )}
                 </div>
