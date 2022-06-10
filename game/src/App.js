@@ -88,6 +88,22 @@ function App() {
         </div>)
         return teamMap
     };
+        //Point decrease
+    function decreasePoint (n) {
+        let new_arr = Points[n] - 100
+        Points[n] = new_arr
+        console.log(Points)
+        setNames(formatName(nameArr, players))
+        setPoints(Points)
+    };
+    function increasePoint (n) {
+        let new_arr = Points[n] + 100
+        Points[n] = new_arr
+        console.log(Points)
+        setNames(formatName(nameArr, players))
+        setPoints(Points)
+    };
+
 
 
     return (
@@ -113,7 +129,9 @@ function App() {
                     {names.map(name => 
                     <div key={name}>
                         {name}
-                        <p> {Points[names.indexOf(name)]}</p>
+                        <button className="pointmin" onClick={()=>decreasePoint(names.indexOf(name))}>-</button>
+                        <p  key={Points[names.indexOf(name)]}> {Points[names.indexOf(name)]}</p>
+                        {<button className="pointadd" onClick={()=> increasePoint(names.indexOf(name))}>+</button>}
                     </div>
                     )}
                 </div>
