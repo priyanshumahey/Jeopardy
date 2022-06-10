@@ -32,11 +32,14 @@ function App() {
     const [names, setNames] = React.useState()
     const nameArr = [name1, name2, name3, name4, name5, name6, name7, name8]
     const setNameArr = [setName1, setName2, setName3, setName4,setName5,setName6,setName7,setName8]    
-    
+        //Points
+    const [Points, setPoints] = React.useState()
+
     //onClicks
         //Changes Main
     const showMainClick = () => {setshowMain(true)
         setNames(formatName(nameArr, players))
+        setPoints([1000,0,0,0,0,0,0,0])
     };
         //Changes formating of the name
     const formatName = (arr, num) =>{
@@ -87,7 +90,6 @@ function App() {
     };
 
 
-
     return (
         <div className="App">
             {/*Header*/}
@@ -111,9 +113,11 @@ function App() {
                     {names.map(name => 
                     <div key={name}>
                         {name}
+                        <p> {Points[names.indexOf(name)]}</p>
                     </div>
                     )}
                 </div>
+                
                 <div className="gameBody">
                     {/*<Board />*/}
                 </div>
