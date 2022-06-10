@@ -8,7 +8,7 @@ import './App.css'
 const Head = () => {
   return (
     <>
-      <h1 className="Title" >Jeopardy</h1>
+      <h1 className="Title" >JeoPriydy</h1>
       <h3>Welcome to JeoPriydy, the classic quiz game! To begin, choose the number of people and start the game!</h3>
     </>
   )
