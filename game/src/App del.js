@@ -132,30 +132,11 @@ const Board = () => {
 }
 
 
-/*
-<h1>{props.players}</h1>
-      <h2>Main</h2>
-<>{questionsList}</>
-*/
-/*
-const Foot = () => {
-  return (
-    <h2>
-      Foot
-    </h2>
-    )
-}
-*/
-
 function App() {
   //states
   const [showMain, setshowMain] = React.useState(false)
   let [players, setPlays] = React.useState(1)
   const [name, setName] = React.useState()
-
-  //constants
-  //const teams = ["Team 1", "Team 2", "Team 3", "Team 4", "Team 5", "Team 6", "Team 7", "Team 8"]
-
   //onClicks
   const showMainClick = () => {
     setshowMain(true)
@@ -201,7 +182,6 @@ function App() {
         </form>
       </>
       {name}
-      {/*{showMain && <Foot />}*/}
     </div>
   );
 }
