@@ -13,10 +13,48 @@ function Head() {
 };
 
 const Quest = (props) => {
+    const [Answershow, setAnswershow] = React.useState(true)
+    function showAnswer () {
+        setAnswershow(!Answershow)
+    }
     return (
         <div className="overlay" onClick={props.onClick}>
-                <div className="text">{props.text}</div>
+                <div className="text">
+                <button onCLick={showAnswer}></button>
+                {Answershow && <h1>{props.answer}</h1>}    
+                    {props.text}
+                    </div>
+                
             </div>
+    )
+}
+
+const Question = (props) => {
+    const finStyle = {
+        display: "inline-block",
+        backgroundColor: 'lightblue',
+        width: '125px',
+        paddingTop: '52.5px',
+        paddingBottom: '52.5px',
+        verticalAlign: "middle",
+        margin: "1%",
+        borderRadius: "15%",
+        fontSize: "20px",
+        
+      }
+      const openOverlay = () => {
+        setTrial(!trial)
+        setshowDisplay(true)
+        return
+      }
+      const [trial, setTrial] = React.useState(true)
+      const [showDisplay, setshowDisplay] = React.useState(false)
+    
+    return (
+        <>
+        {showDisplay && <Quest text={props.text} answer={props.answer} onClick={() => setshowDisplay(false)}/>}
+        <div style={finStyle}  onClick={() => openOverlay()}>{trial && <>100</>}{!trial && <>-</>}</div>
+        </>
     )
 }
 
@@ -48,20 +86,10 @@ const Board = () => {
       borderRadius: "7%",
       textAlign: 'center',
     }
-    const printWorking = (msg) => {
-      console.log(msg)
-      setTrial(!trial)
-      setshowDisplay(true)
-      return
-    }
-    const [trial, setTrial] = React.useState(true)
-    const [showDisplay, setshowDisplay] = React.useState(false)
   
     return (
       <>
         <div className="App">
-            
-            {showDisplay && <Quest text="Q1" onClick={() => setshowDisplay(false)}/>}
         <div className='parent'>
             <div style={headerstyle}>Words in Research</div>
             <div style={headerstyle}>Science Trivia</div>
@@ -71,8 +99,8 @@ const Board = () => {
             <div style={headerstyle}>Title 6</div>
           </div>
         <div className='parent'>
-            <div style={finStyle}  onClick={() => printWorking("Hello")}>{trial && <>100</>}{!trial && <>-</>}</div>
-            <div style={finStyle} onClick={() => printWorking("Hello")}>{trial && <>100</>}{!trial && <>-</>}</div>
+            <Question text="Question 1" answer="Answer 1"/>
+            <Question text="Question 2"  answer=""/>
             <div style={finStyle}>100</div>
             <div style={finStyle}>100</div>
             <div style={finStyle}>100</div>
