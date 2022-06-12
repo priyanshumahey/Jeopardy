@@ -251,19 +251,4 @@ function App () {
 }
 
 
-/*
-{showMain && 
-      <div>
-        <div className="sideTeams">
-          <div>Team 1</div>
-          <div>Team 2</div>
-          <div>Team 3</div>
-        </div>
-        <div className="gameBody">
-          <Board />
-        </div>
-      </div>}
-*/
-
-
 export default App;
