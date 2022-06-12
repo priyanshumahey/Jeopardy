@@ -12,6 +12,14 @@ function Head() {
     )
 };
 
+const Quest = (props) => {
+    return (
+        <div className="overlay" onClick={props.onClick}>
+                <div className="text">{props.text}</div>
+            </div>
+    )
+}
+
 const Board = () => {
     const finStyle = {
       display: "inline-block",
@@ -52,10 +60,8 @@ const Board = () => {
     return (
       <>
         <div className="App">
-            <button onClick={() => setshowDisplay(true)}>Overlay</button>
-                    {showDisplay && <div className="overlay" onClick={() => setshowDisplay(false)}>
-                        <div className="text">Question</div>
-                    </div>}
+            
+            {showDisplay && <Quest text="Q1" onClick={() => setshowDisplay(false)}/>}
         <div className='parent'>
             <div style={headerstyle}>Words in Research</div>
             <div style={headerstyle}>Science Trivia</div>
@@ -124,9 +130,6 @@ function App() {
     const setNameArr = [setName1, setName2, setName3, setName4,setName5,setName6,setName7,setName8]    
         //Points
     const [Points, setPoints] = React.useState()
-        //Shows overlay
-    const [showDisplay, setshowDisplay] = React.useState(false)
-
     //onClicks
         //Changes Main
     const showMainClick = () => {setshowMain(true)
@@ -230,10 +233,6 @@ function App() {
                 </div>
                 
                 <div className="gameBody">
-                    <button onClick={() => setshowDisplay(true)}>Overlay</button>
-                    {showDisplay && <div className="overlay" onClick={() => setshowDisplay(false)}>
-                        <div className="text">Question</div>
-                    </div>}
                     <h1>Game Board Name</h1>
                     {<Board />}
                 </div>
