@@ -43,13 +43,19 @@ const Board = () => {
     const printWorking = (msg) => {
       console.log(msg)
       setTrial(!trial)
+      setshowDisplay(true)
       return
     }
     const [trial, setTrial] = React.useState(true)
+    const [showDisplay, setshowDisplay] = React.useState(false)
   
     return (
       <>
         <div className="App">
+            <button onClick={() => setshowDisplay(true)}>Overlay</button>
+                    {showDisplay && <div className="overlay" onClick={() => setshowDisplay(false)}>
+                        <div className="text">Question</div>
+                    </div>}
         <div className='parent'>
             <div style={headerstyle}>Words in Research</div>
             <div style={headerstyle}>Science Trivia</div>
@@ -60,7 +66,7 @@ const Board = () => {
           </div>
         <div className='parent'>
             <div style={finStyle}  onClick={() => printWorking("Hello")}>{trial && <>100</>}{!trial && <>-</>}</div>
-            <div style={finStyle}>100</div>
+            <div style={finStyle} onClick={() => printWorking("Hello")}>{trial && <>100</>}{!trial && <>-</>}</div>
             <div style={finStyle}>100</div>
             <div style={finStyle}>100</div>
             <div style={finStyle}>100</div>
