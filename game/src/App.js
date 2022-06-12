@@ -16,26 +16,29 @@ const Board = () => {
     const finStyle = {
       display: "inline-block",
       backgroundColor: 'lightblue',
-      padding: "5%",
+      width: '125px',
+      //height: '125px',
+      paddingTop: '52.5px',
+      paddingBottom: '52.5px',
       verticalAlign: "middle",
       margin: "1%",
       borderRadius: "15%",
+      fontSize: "20px",
       
     }
-    const finStyle2 = {
+    const headerstyle = {
       display: "inline-block",
-      width: "4%",
-      height: "1%",
       backgroundColor: 'lightblue',
       paddingLeft: "3%",
       paddingRight: "3%",
-      paddingTop: "1%",
-      paddingBottom: "1%",
+      width: '50px',
+      height: '75px',
       verticalAlign: "middle",
       marginLeft: "1%",
       marginRight: "0.8%",
       border: "2px solid black",
       borderRadius: "7%",
+      textAlign: 'center',
     }
     const printWorking = (msg) => {
       console.log(msg)
@@ -48,52 +51,44 @@ const Board = () => {
       <>
         <div className="App">
         <div className='parent'>
-            <div style={finStyle2} onClick={() => printWorking("Hello")}>{trial && <>Title 1</>}</div>
-            <div style={finStyle2}>Title 2</div>
-            <div style={finStyle2}>Title 3</div>
-            <div style={finStyle2}>Title 4</div>
-            <div style={finStyle2}>Title 5</div>
-            <div style={finStyle2}>Title 6</div>
+            <div style={headerstyle}>Words in Research</div>
+            <div style={headerstyle}>Science Trivia</div>
+            <div style={headerstyle}>Title 3</div>
+            <div style={headerstyle}>Title 4</div>
+            <div style={headerstyle}>Title 5</div>
+            <div style={headerstyle}>Title 6</div>
           </div>
         <div className='parent'>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
+            <div style={finStyle}  onClick={() => printWorking("Hello")}>{trial && <>100</>}{!trial && <>-</>}</div>
+            <div style={finStyle}>100</div>
+            <div style={finStyle}>100</div>
+            <div style={finStyle}>100</div>
+            <div style={finStyle}>100</div>
+            <div style={finStyle}>100</div>
           </div>
           <div className='parent'>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
+            <div style={finStyle}>200</div>
+            <div style={finStyle}>200</div>
+            <div style={finStyle}>200</div>
+            <div style={finStyle}>200</div>
+            <div style={finStyle}>200</div>
+            <div style={finStyle}>200</div>
           </div>
           <div className='parent'>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
+            <div style={finStyle}>400</div>
+            <div style={finStyle}>400</div>
+            <div style={finStyle}>400</div>
+            <div style={finStyle}>400</div>
+            <div style={finStyle}>400</div>
+            <div style={finStyle}>400</div>
           </div>
           <div className='parent'>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-          </div>
-          <div className='parent'>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
-            <div style={finStyle}></div>
+            <div style={finStyle}>600</div>
+            <div style={finStyle}>600</div>
+            <div style={finStyle}>600</div>
+            <div style={finStyle}>600</div>
+            <div style={finStyle}>600</div>
+            <div style={finStyle}>600</div>
           </div>
         </div>
       </>
@@ -123,6 +118,8 @@ function App() {
     const setNameArr = [setName1, setName2, setName3, setName4,setName5,setName6,setName7,setName8]    
         //Points
     const [Points, setPoints] = React.useState()
+        //Shows overlay
+    const [showDisplay, setshowDisplay] = React.useState(false)
 
     //onClicks
         //Changes Main
@@ -212,7 +209,6 @@ function App() {
             {!showMain && teamNames(players)}
             <></>
             {!showMain && <button className="StartButton" onClick={showMainClick}>Start the game!</button>}
-            {showMain && <div><h1>Showing Main</h1></div>}
             {showMain && <div>
                 <div className="sideTeams">
                     {names.map(name => 
@@ -228,7 +224,12 @@ function App() {
                 </div>
                 
                 <div className="gameBody">
-                    {/*<Board />*/}
+                    <button onClick={() => setshowDisplay(true)}>Overlay</button>
+                    {showDisplay && <div className="overlay" onClick={() => setshowDisplay(false)}>
+                        <div className="text">Question</div>
+                    </div>}
+                    <h1>Game Board Name</h1>
+                    {<Board />}
                 </div>
             </div>}
 
