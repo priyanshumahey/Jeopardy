@@ -244,8 +244,4 @@ function App() {
     )
 };
 
-//Components to make:
-    //Board Component (no props, just simple board)
-    //A smaller question component that takes in number prop, question prop, and answer prop. Add an optional daily double option
-//Winner page ??
 export default App;
