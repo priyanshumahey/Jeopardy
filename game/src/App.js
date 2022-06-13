@@ -234,7 +234,7 @@ function App() {
                 </div>
                 
                 <div className="gameBody">
-                    <h1>URO</h1>
+                    <h1 className="GameTitle">URO</h1>
                     {<Board />}
                 </div>
             </div>}

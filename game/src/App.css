@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.GameTitle {
+  margin-top: 0px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -143,6 +147,7 @@ input {
   display:inline-block;
   margin: 10px;
   font-size: 20px;
+  border-radius: 25px;
 }
 
 .butt{
@@ -152,18 +157,33 @@ input {
   font-size: 20px;
   height:40px;
   width:40px;
+  transition: 0.2s;
 }
+
+.butt:hover{
+  display:inline-block;
+  background-color: rgba(0,0,0,1); 
+
+}
+
 
 .BodyQuestion {
   display: inline-block;
-  background-color: lightblue;
-  width: 125px;
-  padding-top: 52.5px;
-  padding-bottom: 52.5px;
+  background-color: rgb(82, 205, 246);
+  width: 195px;
+  padding-top: 72.5px;
+  padding-bottom: 72.5px;
   vertical-align: middle;
   margin: 1%;
   border-radius: 15%;
   font-size: 20px;
+  opacity: 0.6;
+  font-family: 'Helvetica';
+  transition: 0.2s;
+}
+
+.BodyQuestion:hover {
+  opacity: 1;
 }
 
 .headerstyle {
@@ -171,7 +191,8 @@ input {
   background-color: lightblue;
   padding-left: 3%;
   padding-right: 3%;
-  width: 50px;
+  padding-top:1%;
+  width: 100px;
   height: 75px;
   vertical-align: middle;
   margin-left: 1%;
@@ -179,6 +200,8 @@ input {
   border: 2px solid black;
   border-radius: 7%;
   text-align: center;
+  font-size: 18px;
+  font-family: 'Helvetica'
 }
 
 .DD {
