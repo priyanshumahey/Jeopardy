@@ -57,12 +57,12 @@ const Question = (props) => {
 
 
 const Board = () => {
+    //Titles
     const titles  = ["Words in Research", "Science Trivia", "Title 3", "Title 4", "Title 5", "Title 6"]
-    
     const titleMap = () => {
         return titles.map(title => <div className="headerstyle">{title}</div>)
     }
-
+    
     return (
       <>
         <div className="App">
