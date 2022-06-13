@@ -59,7 +59,7 @@ const Question = (props) => {
 
 const Board = () => {
     //Titles
-    const titles  = ["Words in Research", "Meow Meow Meow", "Back in my Day...", "Before During After", "", "Stupid Answers"]
+    const titles  = ["Words in Research", "Meow Meow Meow", "Back in my Day...", "Before & After", "Demonyms", "Stupid Answers"]
     const titleMap = () => {
         return titles.map(title => <div className="headerstyle">{title}</div>)
     }
@@ -74,32 +74,32 @@ const Board = () => {
             <Question text="Used to hear" answer="Ear" amount="100" dd={false}/>
             <Question text="Has the loudest roar, very socail cats" answer="Lions" amount="100" dd={false}/>
             <Question text="Dora's main sidekick" answer="Boots" amount="100" dd={false}/>
-            <Question text="" answer="" amount="100" dd={false}/>
-            <Question text="" answer="" amount="100" dd={false}/>
+            <Question text="Bookseller made up of argon, neon, xenon, helium or radon" answer="Barnes and Noble gases" amount="100" dd={false}/>
+            <Question text="People from Australia" answer="Australians" amount="100" dd={false}/>
             <Question text="The highest mountain in Kenya" answer="Mt. Kenya" amount="100" dd={false}/>
           </div>
           <div className='parent'>
             <Question text="Folding or creating a line on something" answer="Crease" amount="200" dd={false}/>
             <Question text="Largest species of cat" answer="Siberian tiger" amount="200" dd={false}/>
             <Question text="The name of the monkey in Aladdin" answer="Abu" amount="200" dd={false}/>
-            <Question text="Question 10" answer="Answer 10" amount="200" dd={false}/>
-            <Question text="Question 11" answer="Answer 11" amount="200" dd={false}/>
+            <Question text="Celestial body of extremely intense gravity that scores an ace in golf" answer="A black hole in one" amount="200" dd={false}/>
+            <Question text="People from Hong Kong" answer="Hong Kongers or Hong Kongese" amount="200" dd={false}/>
             <Question text="Founded in 1929, this New York museum is dedicated to modern art" answer="Museum of Modern Art" amount="200" dd={false}/>
           </div>
           <div className='parent'>
             <Question text="Solid remnants of fire" answer="Ash" amount="400" dd={false}/>
             <Question text="The only cat that can change its direction midair" answer="Cheetah" amount="400" dd={false}/>
             <Question text="The 4th highest selling game, in it, you bowl, play tennis, golf and box" answer="Wii Sports" amount="400" dd={false}/>
-            <Question text="Question 16" answer="Answer 16" amount="400" dd={false}/>
-            <Question text="Question 17" answer="Answer 17" amount="400" dd={false}/>
+            <Question text="Mouselike boy in an E.B. White story traveling through the heavens as Ursa Minor" answer="	Stuart Little Dipper" amount="400" dd={true}/>
+            <Question text="People from Toronto" answer="Torontonians" amount="400" dd={false}/>
             <Question text="The third largest city in Kansas" answer="Kansas City" amount="400" dd={false}/>
           </div>
           <div className='parent'>
             <Question text="Vehicle that carries the coffin at a funeral" answer="Hearse" amount="600" dd={false}/>
             <Question text="Hold the Guinness World Record for the animal species with the most names" answer="Cougar" amount="600" dd={false}/>
             <Question text="This song was so popular it broke Youtube and caused them to rebuild their architecture" answer="Gangnam Style" amount="600" dd={false}/>
-            <Question text="Question 22" answer="Answer 22" amount="600" dd={false}/>
-            <Question text="Question 23" answer="Answer 23" amount="600" dd={false}/>
+            <Question text="Middle Eastern entertainment with rapid gyrations of the hips that's a reality TV show judged by Len Bruno and Carrie Ann" answer="Belly dancing with the stars" amount="600" dd={false}/>
+            <Question text="People from Quebec" answer="Quebeckers" amount="600" dd={false}/>
             <Question text="In 1985, Neil Simon's 'Billoxi Blues' premiered at this theatre" answer="Neil Simon's theatre" amount="600" dd={false}/>
           </div>
         </div>
