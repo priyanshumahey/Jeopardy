@@ -26,7 +26,7 @@ const Quest = (props) => {
             <div className="text">
                 {props.dd && <><h1 className="DD">DAILY DOUBLE!!!</h1></>}
                 <h3>{props.text}</h3>
-                {showAnswer && <h1>{props.answer}</h1>}
+                {showAnswer && <h2>{props.answer}</h2>}
                 <br></br>
                 <button onClick={() =>setshowAnswer(!showAnswer)}>Answer</button>
                 <button onClick={props.onClick}>Close</button>
@@ -37,11 +37,12 @@ const Quest = (props) => {
 
 
 const Question = (props) => {
-    
+    //Shows you the overlay
     const [showOverlay, setOverlay] = React.useState(true)
+    //Allows you to actually close the overlay
     const [showDisplay, setshowDisplay] = React.useState(false)
     
-
+    //Opens Overlay and toggles points showing
     const openOverlay = () => {
         setOverlay(!showOverlay)
         setshowDisplay(true)
@@ -190,6 +191,7 @@ function App() {
         setNames(formatName(nameArr, players))
         setPoints(Points)
     };
+        //Points increase
     function increasePoint (n) {
         let new_arr = Points[n] + 100
         Points[n] = new_arr
