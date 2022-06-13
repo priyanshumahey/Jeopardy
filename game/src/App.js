@@ -72,7 +72,7 @@ const Board = () => {
           </div>
         <div className='parent'>
             <Question text="Used to hear" answer="Ear" amount="100" dd={false}/>
-            <Question text="Has the loudest roar, very socail cats" answer="Lions" amount="100" dd={false}/>
+            <Question text="Has the loudest roar, very social cat" answer="Lions" amount="100" dd={false}/>
             <Question text="Dora's main sidekick" answer="Boots" amount="100" dd={false}/>
             <Question text="Bookseller made up of argon, neon, xenon, helium or radon" answer="Barnes and Noble gases" amount="100" dd={false}/>
             <Question text="People from Australia" answer="Australians" amount="100" dd={false}/>
