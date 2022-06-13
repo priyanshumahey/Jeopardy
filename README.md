@@ -8,3 +8,8 @@
     - __App.js__: Stores all the React Components
     - __Index.html__: Stores all the html code to be displayed on the website
  - __Instructions.md__: Contains instructions on how to play the game as well as an example of best usage of the game.
+
+ ## Game Look
+The game currently looks as follows:
+![game](/game\src\boardpic.png)
+This is styled for a very specific browser so it may differ on other devices. 
