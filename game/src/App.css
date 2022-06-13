@@ -2,8 +2,13 @@
   text-align: center;
 }
 
+html, body {
+  height: 100vh;
+  width: 100vw;
+}
+
 .GameTitle {
-  margin-top: 0px;
+  color: white;
 }
 
 .App-header {
@@ -100,6 +105,9 @@
 
 .gameBody{
   margin-right: 20%;
+  background: url("mainbg.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
 }
 
 input {
@@ -150,6 +158,11 @@ input {
   border-radius: 25px;
 }
 
+.TeamNames {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
 .butt{
   display:inline-block;
   margin: 10px;
@@ -184,6 +197,7 @@ input {
 
 .BodyQuestion:hover {
   opacity: 1;
+  transform: scale(1.01);
 }
 
 .headerstyle {

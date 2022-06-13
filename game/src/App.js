@@ -222,7 +222,7 @@ function App() {
             {showMain && <div>
                 <div className="sideTeams">
                     {names.map(name => 
-                    <div key={name}>
+                    <div className="TeamNames"key={name}>
                         {name}
                         <div >
                             <button className="Points butt" onClick={()=>decreasePoint(names.indexOf(name))}>-</button>
