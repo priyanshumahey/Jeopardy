@@ -13,79 +13,65 @@ function Head() {
 };
 
 const Quest = (props) => {
-    const [showAnswer, setshowAnswer] = React.useState(false)
-    return (
-        <div className="overlay" >
-                <div className="text">
-                    {props.text}
-                    {showAnswer && <h3>{props.answer}</h3>}
-                    <br></br>
-                    <button onClick={() =>setshowAnswer(!showAnswer)}>Answer</button>
-                    <button onClick={props.onClick}>Close</button>
-                </div>
-            </div>
-    )
-}
+    //props:
+        //text: Actual question being asked
+        //answer: Answer
+        //onCLick: onClick for the close button
 
-const Question = (props) => {
-    const finStyle = {
-        display: "inline-block",
-        backgroundColor: 'lightblue',
-        width: '125px',
-        paddingTop: '52.5px',
-        paddingBottom: '52.5px',
-        verticalAlign: "middle",
-        margin: "1%",
-        borderRadius: "15%",
-        fontSize: "20px",
-        
-      }
-      const openOverlay = () => {
-        setOverlay(!showOverlay)
-        setshowDisplay(true)
-        return
-      }
-      const [showOverlay, setOverlay] = React.useState(true)
-      const [showDisplay, setshowDisplay] = React.useState(false)
+    //Changes based on if answer button is seleted or not
+    const [showAnswer, setshowAnswer] = React.useState(false)
     
     return (
+        <div className="overlay" >
+            <div className="text">
+                {props.dd && <><h1 className="DD">DAILY DOUBLE!!!</h1></>}
+                <h3>{props.text}</h3>
+                {showAnswer && <h1>{props.answer}</h1>}
+                <br></br>
+                <button onClick={() =>setshowAnswer(!showAnswer)}>Answer</button>
+                <button onClick={props.onClick}>Close</button>
+                </div>
+        </div>
+    )
+};
+
+
+const Question = (props) => {
+    
+    const [showOverlay, setOverlay] = React.useState(true)
+    const [showDisplay, setshowDisplay] = React.useState(false)
+    
+
+    const openOverlay = () => {
+        setOverlay(!showOverlay)
+        setshowDisplay(true)
+    };
+
+    return (
         <>
-            {showDisplay && <Quest text={props.text} answer={props.answer} onClick={() => setshowDisplay(false)}/>}
-            <div style={finStyle}  onClick={() => openOverlay()}>{showOverlay && <>{props.amount}</>}{!showOverlay && <>-</>}</div>
+            {showDisplay && <Quest text={props.text} answer={props.answer} dd={props.dd} onClick={() => setshowDisplay(false)}/>}
+            <div className="BodyQuestion"  onClick={() => openOverlay()}>{showOverlay && <>{props.amount}</>}{!showOverlay && <>-</>}</div>
         </>
     )
 }
 
+
+
 const Board = () => {
-    const headerstyle = {
-      display: "inline-block",
-      backgroundColor: 'lightblue',
-      paddingLeft: "3%",
-      paddingRight: "3%",
-      width: '50px',
-      height: '75px',
-      verticalAlign: "middle",
-      marginLeft: "1%",
-      marginRight: "0.8%",
-      border: "2px solid black",
-      borderRadius: "7%",
-      textAlign: 'center',
-    }
-  
     return (
       <>
         <div className="App">
         <div className='parent'>
-            <div style={headerstyle}>Words in Research</div>
-            <div style={headerstyle}>Science Trivia</div>
-            <div style={headerstyle}>Title 3</div>
-            <div style={headerstyle}>Title 4</div>
-            <div style={headerstyle}>Title 5</div>
-            <div style={headerstyle}>Title 6</div>
+            <div className="headerstyle">Words in Research</div>
+            <div className="headerstyle">Science Trivia</div>
+            <div className="headerstyle">Title 3</div>
+            <div className="headerstyle">Title 4</div>
+            <div className="headerstyle">Title 5</div>
+            <div className="headerstyle">Title 6</div>
           </div>
         <div className='parent'>
-            <Question text="Question 1" answer="Answer 1" amount="100"/>
-            <Question text="Question 2" answer="Answer 2" amount="100"/>
+            <Question text="Question 1" answer="Answer 1" amount="100" dd={true}/>
+            <Question text="Question 2" answer="Answer 2" amount="100" dd={false}/>
             <Question text="Question 3" answer="Answer 3" amount="100"/>
             <Question text="Question 4" answer="Answer 4" amount="100"/>
             <Question text="Question 5" answer="Answer 5" amount="100"/>
