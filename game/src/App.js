@@ -51,25 +51,12 @@ const Question = (props) => {
     return (
         <>
             {showDisplay && <Quest text={props.text} answer={props.answer} onClick={() => setshowDisplay(false)}/>}
-            <div style={finStyle}  onClick={() => openOverlay()}>{showOverlay && <>100</>}{!showOverlay && <>-</>}</div>
+            <div style={finStyle}  onClick={() => openOverlay()}>{showOverlay && <>{props.amount}</>}{!showOverlay && <>-</>}</div>
         </>
     )
 }
 
 const Board = () => {
-    const finStyle = {
-      display: "inline-block",
-      backgroundColor: 'lightblue',
-      width: '125px',
-      //height: '125px',
-      paddingTop: '52.5px',
-      paddingBottom: '52.5px',
-      verticalAlign: "middle",
-      margin: "1%",
-      borderRadius: "15%",
-      fontSize: "20px",
-      
-    }
     const headerstyle = {
       display: "inline-block",
       backgroundColor: 'lightblue',
@@ -97,36 +84,36 @@ const Board = () => {
             <div style={headerstyle}>Title 6</div>
           </div>
         <div className='parent'>
-            <Question text="Question 1" answer="Answer 1"/>
-            <Question text="Question 2"  answer="Answer 2"/>
-            <div style={finStyle}>100</div>
-            <div style={finStyle}>100</div>
-            <div style={finStyle}>100</div>
-            <div style={finStyle}>100</div>
+            <Question text="Question 1" answer="Answer 1" amount="100"/>
+            <Question text="Question 2" answer="Answer 2" amount="100"/>
+            <Question text="Question 3" answer="Answer 3" amount="100"/>
+            <Question text="Question 4" answer="Answer 4" amount="100"/>
+            <Question text="Question 5" answer="Answer 5" amount="100"/>
+            <Question text="Question 6" answer="Answer 6" amount="100"/>
           </div>
           <div className='parent'>
-            <div style={finStyle}>200</div>
-            <div style={finStyle}>200</div>
-            <div style={finStyle}>200</div>
-            <div style={finStyle}>200</div>
-            <div style={finStyle}>200</div>
-            <div style={finStyle}>200</div>
+            <Question text="Question 7" answer="Answer 7" amount="200"/>
+            <Question text="Question 8" answer="Answer 8" amount="200"/>
+            <Question text="Question 9" answer="Answer 9" amount="200"/>
+            <Question text="Question 10" answer="Answer 10" amount="200"/>
+            <Question text="Question 11" answer="Answer 11" amount="200"/>
+            <Question text="Question 12" answer="Answer 12" amount="200"/>
           </div>
           <div className='parent'>
-            <div style={finStyle}>400</div>
-            <div style={finStyle}>400</div>
-            <div style={finStyle}>400</div>
-            <div style={finStyle}>400</div>
-            <div style={finStyle}>400</div>
-            <div style={finStyle}>400</div>
+            <Question text="Question 13" answer="Answer 13" amount="400"/>
+            <Question text="Question 14" answer="Answer 14" amount="400"/>
+            <Question text="Question 15" answer="Answer 15" amount="400"/>
+            <Question text="Question 16" answer="Answer 16" amount="400"/>
+            <Question text="Question 17" answer="Answer 17" amount="400"/>
+            <Question text="Question 18" answer="Answer 18" amount="400"/>
           </div>
           <div className='parent'>
-            <div style={finStyle}>600</div>
-            <div style={finStyle}>600</div>
-            <div style={finStyle}>600</div>
-            <div style={finStyle}>600</div>
-            <div style={finStyle}>600</div>
-            <div style={finStyle}>600</div>
+            <Question text="Question 19" answer="Answer 19" amount="600"/>
+            <Question text="Question 20" answer="Answer 20" amount="600"/>
+            <Question text="Question 21" answer="Answer 21" amount="600"/>
+            <Question text="Question 22" answer="Answer 22" amount="600"/>
+            <Question text="Question 23" answer="Answer 23" amount="600"/>
+            <Question text="Question 24" answer="Answer 24" amount="600"/>
           </div>
         </div>
       </>
