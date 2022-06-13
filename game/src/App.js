@@ -13,18 +13,16 @@ function Head() {
 };
 
 const Quest = (props) => {
-    const [Answershow, setAnswershow] = React.useState(true)
-    function showAnswer () {
-        setAnswershow(!Answershow)
-    }
+    const [showAnswer, setshowAnswer] = React.useState(false)
     return (
-        <div className="overlay" onClick={props.onClick}>
+        <div className="overlay" >
                 <div className="text">
-                <button onCLick={showAnswer}></button>
-                {Answershow && <h1>{props.answer}</h1>}    
                     {props.text}
-                    </div>
-                
+                    {showAnswer && <h3>{props.answer}</h3>}
+                    <br></br>
+                    <button onClick={() =>setshowAnswer(!showAnswer)}>Answer</button>
+                    <button onClick={props.onClick}>Close</button>
+                </div>
             </div>
     )
 }
@@ -43,17 +41,17 @@ const Question = (props) => {
         
       }
       const openOverlay = () => {
-        setTrial(!trial)
+        setOverlay(!showOverlay)
         setshowDisplay(true)
         return
       }
-      const [trial, setTrial] = React.useState(true)
+      const [showOverlay, setOverlay] = React.useState(true)
       const [showDisplay, setshowDisplay] = React.useState(false)
     
     return (
         <>
-        {showDisplay && <Quest text={props.text} answer={props.answer} onClick={() => setshowDisplay(false)}/>}
-        <div style={finStyle}  onClick={() => openOverlay()}>{trial && <>100</>}{!trial && <>-</>}</div>
+            {showDisplay && <Quest text={props.text} answer={props.answer} onClick={() => setshowDisplay(false)}/>}
+            <div style={finStyle}  onClick={() => openOverlay()}>{showOverlay && <>100</>}{!showOverlay && <>-</>}</div>
         </>
     )
 }
@@ -100,7 +98,7 @@ const Board = () => {
           </div>
         <div className='parent'>
             <Question text="Question 1" answer="Answer 1"/>
-            <Question text="Question 2"  answer=""/>
+            <Question text="Question 2"  answer="Answer 2"/>
             <div style={finStyle}>100</div>
             <div style={finStyle}>100</div>
             <div style={finStyle}>100</div>
