@@ -53,21 +53,21 @@ const Question = (props) => {
             <div className="BodyQuestion"  onClick={() => openOverlay()}>{showOverlay && <>{props.amount}</>}{!showOverlay && <>-</>}</div>
         </>
     )
-}
-
+};
 
 
 const Board = () => {
+    const titles  = ["Words in Research", "Science Trivia", "Title 3", "Title 4", "Title 5", "Title 6"]
+    
+    const titleMap = () => {
+        return titles.map(title => <div className="headerstyle">{title}</div>)
+    }
+
     return (
       <>
         <div className="App">
         <div className='parent'>
-            <div className="headerstyle">Words in Research</div>
-            <div className="headerstyle">Science Trivia</div>
-            <div className="headerstyle">Title 3</div>
-            <div className="headerstyle">Title 4</div>
-            <div className="headerstyle">Title 5</div>
-            <div className="headerstyle">Title 6</div>
+            {titleMap()}
           </div>
         <div className='parent'>
             <Question text="Question 1" answer="Answer 1" amount="100" dd={true}/>
