@@ -194,7 +194,7 @@ input {border-style: none;
     color: orange;
   }
   40% {
-    color: yellow
+    color: yellow;
   }
   60% {
     color: green;
@@ -211,14 +211,21 @@ input {border-style: none;
   0% {
     transform: scale(1,1)
     translateY(0);
+    color: red;
   }
   10% {
     transform: scale(1.1, 0.9)
     translateY(0);
   }
+  20% {
+    color: orange;
+  }
   30% {
     transform: scale(.9, 1.1)
     translateY(-55px)
+  }
+  40% {
+    color: yellow;
   }
   50% {
     transform: scale(1.05,0.95)
@@ -228,12 +235,19 @@ input {border-style: none;
     transform: scale(1,1)
     translateY(-7px)
   }
+  60% {
+    color: green;
+  }
   65% {
     transform: scale(1,1)
     translateY(0);
   }
+  80% {
+    color: blue;
+  }
   100% {
     transform: scale(1,1)
     translateY(0);
+    color:purple;
   }
 }
