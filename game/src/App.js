@@ -58,7 +58,7 @@ const Question = (props) => {
 
 const Board = () => {
     //Titles
-    const titles  = ["Words in Research", "Science Trivia", "Title 3", "Title 4", "Title 5", "Title 6"]
+    const titles  = ["Words in Research", "Science Trivia", "Back in my Day...", "Before During After", "", "Stupid Answers"]
     const titleMap = () => {
         return titles.map(title => <div className="headerstyle">{title}</div>)
     }
@@ -70,36 +70,36 @@ const Board = () => {
             {titleMap()}
           </div>
         <div className='parent'>
-            <Question text="Question 1" answer="Answer 1" amount="100" dd={true}/>
-            <Question text="Question 2" answer="Answer 2" amount="100" dd={false}/>
-            <Question text="Question 3" answer="Answer 3" amount="100"/>
-            <Question text="Question 4" answer="Answer 4" amount="100"/>
-            <Question text="Question 5" answer="Answer 5" amount="100"/>
-            <Question text="Question 6" answer="Answer 6" amount="100"/>
+            <Question text="Used to hear" answer="Ear" amount="100" dd={false}/>
+            <Question text="" answer="" amount="100" dd={false}/>
+            <Question text="Dora's main sidekick" answer="Boots" amount="100" dd={false}/>
+            <Question text="" answer="" amount="100" dd={false}/>
+            <Question text="" answer="" amount="100" dd={false}/>
+            <Question text="The highest mountain in Kenya" answer="Mt. Kenya" amount="100" dd={false}/>
           </div>
           <div className='parent'>
-            <Question text="Question 7" answer="Answer 7" amount="200"/>
-            <Question text="Question 8" answer="Answer 8" amount="200"/>
-            <Question text="Question 9" answer="Answer 9" amount="200"/>
-            <Question text="Question 10" answer="Answer 10" amount="200"/>
-            <Question text="Question 11" answer="Answer 11" amount="200"/>
-            <Question text="Question 12" answer="Answer 12" amount="200"/>
+            <Question text="Folding or creating a line on something" answer="Crease" amount="200" dd={false}/>
+            <Question text="Question 8" answer="Answer 8" amount="200" dd={false}/>
+            <Question text="Question 9" answer="Answer 9" amount="200" dd={false}/>
+            <Question text="Question 10" answer="Answer 10" amount="200" dd={false}/>
+            <Question text="Question 11" answer="Answer 11" amount="200" dd={false}/>
+            <Question text="Founded in 1929, this New York museum is dedicated to modern art" answer="Museum of Modern Art" amount="200" dd={false}/>
           </div>
           <div className='parent'>
-            <Question text="Question 13" answer="Answer 13" amount="400"/>
-            <Question text="Question 14" answer="Answer 14" amount="400"/>
-            <Question text="Question 15" answer="Answer 15" amount="400"/>
-            <Question text="Question 16" answer="Answer 16" amount="400"/>
-            <Question text="Question 17" answer="Answer 17" amount="400"/>
-            <Question text="Question 18" answer="Answer 18" amount="400"/>
+            <Question text="Solid remnants of fire" answer="Ash" amount="400" dd={false}/>
+            <Question text="Question 14" answer="Answer 14" amount="400" dd={false}/>
+            <Question text="Question 15" answer="Answer 15" amount="400" dd={true}/>
+            <Question text="Question 16" answer="Answer 16" amount="400" dd={false}/>
+            <Question text="Question 17" answer="Answer 17" amount="400" dd={false}/>
+            <Question text="The third largest city in Kansas" answer="Kansas City" amount="400" dd={false}/>
           </div>
           <div className='parent'>
-            <Question text="Question 19" answer="Answer 19" amount="600"/>
-            <Question text="Question 20" answer="Answer 20" amount="600"/>
-            <Question text="Question 21" answer="Answer 21" amount="600"/>
-            <Question text="Question 22" answer="Answer 22" amount="600"/>
-            <Question text="Question 23" answer="Answer 23" amount="600"/>
-            <Question text="Question 24" answer="Answer 24" amount="600"/>
+            <Question text="Vehicle that carries the coffin at a funeral" answer="Hearse" amount="600" dd={false}/>
+            <Question text="Question 20" answer="Answer 20" amount="600" dd={false}/>
+            <Question text="Question 21" answer="Answer 21" amount="600" dd={false}/>
+            <Question text="Question 22" answer="Answer 22" amount="600" dd={false}/>
+            <Question text="Question 23" answer="Answer 23" amount="600" dd={false}/>
+            <Question text="In 1985, Neil Simon's 'Billoxi Blues' premiered at this theatre" answer="Neil Simon's theatre" amount="600" dd={false}/>
           </div>
         </div>
       </>
@@ -232,7 +232,7 @@ function App() {
                 </div>
                 
                 <div className="gameBody">
-                    <h1>Game Board Name</h1>
+                    <h1>URO</h1>
                     {<Board />}
                 </div>
             </div>}
