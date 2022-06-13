@@ -179,9 +179,12 @@ input {border-style: none;
 }
 
 .DD {
+  display: inline-block !important;
   font-size: 60px !important;
   animation: flash 5s infinite !important;
+  animation: bounce 2s infinite !important;
 }
+
 
 @keyframes flash{
   0% {
@@ -194,12 +197,43 @@ input {border-style: none;
     color: yellow
   }
   60% {
-    color: blue;
+    color: green;
   }
   80% {
-    color: indigo;
+    color: blue;
   }
   100% {
     color: purple;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1,1)
+    translateY(0);
+  }
+  10% {
+    transform: scale(1.1, 0.9)
+    translateY(0);
+  }
+  30% {
+    transform: scale(.9, 1.1)
+    translateY(-55px)
+  }
+  50% {
+    transform: scale(1.05,0.95)
+    translateY(0);
+  }
+  58% {
+    transform: scale(1,1)
+    translateY(-7px)
+  }
+  65% {
+    transform: scale(1,1)
+    translateY(0);
+  }
+  100% {
+    transform: scale(1,1)
+    translateY(0);
   }
 }
