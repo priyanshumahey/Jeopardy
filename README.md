@@ -11,5 +11,5 @@
 
  ## Game Look
 The game currently looks as follows:
-![game](/game\src\boardpic.png)
+![game](/game/src/boardpic.png)
 This is styled for a very specific browser so it may differ on other devices. 
